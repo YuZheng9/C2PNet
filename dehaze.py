@@ -11,30 +11,30 @@ import torchvision.utils as vutils
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--task', type=str, default='its', help='its or ots or NH21 or NH19')
-parser.add_argument('--save_dir', type=str, default='dehaze_images', help='its or ots or NH21 or NH19')
+parser.add_argument('-d', '--dataset_name', help='name of dataset',choices=['NH2', 'dense', 'indoor','outdoor'], default='NH2')
+parser.add_argument('--save_dir', type=str, default='dehaze_images', help='dehaze images save path')
 parser.add_argument('--save', action='store_true',help='save dehaze images')
 opt = parser.parse_args()
 
-dataset = opt.task
+dataset = opt.dataset_name
 if opt.save:
     output_dir = opt.save_dir
     print("pred_dir:", output_dir)
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
-if dataset == 'its':
+if dataset == 'indoor':
     haze_dir = 'images/SOTS/indoor/hazy/'
     clear_dir = 'images/SOTS/indoor/clear/'
     model_dir = 'trained_models/ITS.pkl'
-elif dataset == 'ots':
+elif dataset == 'outdoor':
     haze_dir = 'images/SOTS/outdoor/hazy/'
     clear_dir = 'images/SOTS/outdoor/clear/'
     model_dir = 'trained_models/OTS.pkl'
-elif dataset == 'NH19':
+elif dataset == 'dense':
     haze_dir = 'images/NH19/hazy/'
     clear_dir = 'images/NH19/clear/'
     model_dir = 'trained_models/NH19.pkl'
-elif dataset == 'NH21':
+elif dataset == 'NH2':
     haze_dir = 'images/NH21/hazy/'
     clear_dir = 'images/NH21/clear/'
     model_dir = 'trained_models/NH2.pkl'
@@ -52,7 +52,7 @@ ssim_list = []
 
 for im in tqdm(os.listdir(haze_dir)):
     haze = Image.open(os.path.join(haze_dir,im)).convert('RGB')
-    if dataset == 'its' or dataset == 'ots':
+    if dataset == 'indoor' or dataset == 'outdoor':
         clear_im = im.split('_')[0]+'.png'
     else:
         clear_im = im
