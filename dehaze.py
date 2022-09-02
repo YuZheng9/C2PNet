@@ -18,7 +18,9 @@ opt = parser.parse_args()
 
 dataset = opt.dataset_name
 if opt.save:
-    output_dir = opt.save_dir
+    if not os.path.exists(opt.save_dir):
+        os.mkdir(opt.save_dir)
+    output_dir = os.path.join(opt.save_dir, dataset)
     print("pred_dir:", output_dir)
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
@@ -69,7 +71,7 @@ for im in tqdm(os.listdir(haze_dir)):
     psnr_list.append(pp)
     ssim_list.append(ss)
     if opt.save:
-        vutils.save_image(ts, output_dir+im)
+        vutils.save_image(ts, os.path.join(output_dir,im))
 
 
 print(f'Average PSNR is {np.mean(psnr_list)}')
