@@ -73,4 +73,4 @@ for im in tqdm(os.listdir(haze_dir)):
 
 
 print(f'Average PSNR is {np.mean(psnr_list)}')
-print(f'Average PSNR is {np.mean(ssim_list)}')
+print(f'Average SSIM is {np.mean(ssim_list)}')
