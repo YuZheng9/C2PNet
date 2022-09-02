@@ -6,11 +6,22 @@ from PIL import Image
 import torchvision.transforms as tfs
 from net.metrics import psnr, ssim
 import numpy as np
+import torchvision.utils as vutils
+
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--task', type=str, default='its', help='its or ots or NH21 or NH19')
+parser.add_argument('--save_dir', type=str, default='dehaze_images', help='its or ots or NH21 or NH19')
+parser.add_argument('--save', action='store_true',help='save dehaze images')
 opt = parser.parse_args()
+
 dataset = opt.task
+if opt.save:
+    output_dir = opt.save_dir
+    print("pred_dir:", output_dir)
+    if not os.path.exists(output_dir):
+        os.mkdir(output_dir)
 if dataset == 'its':
     haze_dir = 'images/SOTS/indoor/hazy/'
     clear_dir = 'images/SOTS/indoor/clear/'
@@ -57,9 +68,9 @@ for im in tqdm(os.listdir(haze_dir)):
     ss = ssim(pred.cpu(),clear_no)
     psnr_list.append(pp)
     ssim_list.append(ss)
-    # im = im.split('.')[0]+'_' +str(pp) +'.png'
-    # vutils.save_image(ts,output_dir+im)
+    if opt.save:
+        vutils.save_image(ts, output_dir+im)
 
 
-print(np.mean(psnr_list))
-print(np.mean(ssim_list))
+print(f'Average PSNR is {np.mean(psnr_list)}')
+print(f'Average PSNR is {np.mean(ssim_list)}')
