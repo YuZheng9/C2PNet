@@ -1,6 +1,8 @@
 # C2PDN
 
-Due to the limitations of the github anonymous repository, it is not possible to directly clone the entire repository
+Due to the limitations of the Anonymous Github anonymous, it is not possible to directly clone the entire repository.
+
+Please download dehaze.py and `net` directory.
 
 ## Prepare pretrained models
 
