@@ -40,6 +40,12 @@ To be fair, we do not provide private links to datasets.
 
 Please download datasets by yourself.
 
+Here are the official websites of several datasets.
+
+(SOTS)[https://sites.google.com/view/reside-dehaze-datasets/reside-v0]   
+(HN-Haze2)[https://competitions.codalab.org/competitions/28032#learn_the_details]  
+(Dense-Haze)[https://data.vision.ee.ethz.ch/cvl/ntire19/]
+
 The `images` directory structure will be arranged as: (Note: please check it carefully), 
 
 You can also refer to the `images` directory in the Anonymous Github.
