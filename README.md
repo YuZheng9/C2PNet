@@ -1,8 +1,20 @@
 # C2PDN
 
-Due to the limitations of the Anonymous Github anonymous, it is not possible to directly clone the entire repository.
+Due to the limitations of the Anonymous Github, it is not possible to directly clone the entire repository.
 
-Please download dehaze.py and `net` directory.
+Please download `C2PDN.zip`. Then, unzip the file.
+
+The directory structure will be arranged as:
+
+```
+C2PDN
+   |- net
+      |- models
+         |- C2PDN.py 
+         |- __init__.py 
+      |- metrics.py
+   |- dehaze.py
+```
 
 ## Prepare pretrained models
 
@@ -24,6 +36,62 @@ trained_models
 
 ## Prepare dataset for evaluation
 
+To be fair, we do not provide private links to datasets. 
+
+Please download datasets by yourself.
+
+The `images` directory structure will be arranged as: (Note: please check it carefully), 
+
+You can also refer to the `images` directory in the Anonymous Github.
+
+```
+images
+   |-NH19
+      |- hazy 
+         |- 51.png 
+         |- 52.png
+         |- 53.png 
+         |- 54.png
+         |- 55.png 
+      |- clear
+         |- 51.png 
+         |- 52.png
+         |- 53.png 
+         |- 54.png
+         |- 55.png 
+   |-NH21
+      |- hazy 
+         |- 21.png 
+         |- 22.png
+         |- 23.png 
+         |- 24.png
+         |- 25.png 
+      |- clear
+         |- 21.png 
+         |- 22.png
+         |- 23.png 
+         |- 24.png
+         |- 25.png 
+   |-SOTS
+      |- indoor
+         |- hazy
+            |- 1400_1.png 
+            |- 1401_1.png 
+            ...
+         |- clear
+            |- 1400.png 
+            |- 1401.png
+            ...
+      |- outdoor
+         |- hazy
+            |- 0001_0.8_0.2.jpg 
+            |- 0002_0.8_0.08.jpg
+            ...
+         |- clear
+            |- 0001.png 
+            |- 0002.png
+            ...
+```
 
 
 ## evaluation
