@@ -1,4 +1,4 @@
-# C2PNet
+# Curricular Contrastive Regularization for Physics-aware Single Image Dehazing
 
 ## Prepare pretrained models
 
