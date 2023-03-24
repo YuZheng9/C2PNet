@@ -1,20 +1,4 @@
-# C2PDN
-
-Due to the limitations of the Anonymous Github, it is not possible to directly clone the entire repository.
-
-Please download `C2PDN.zip`. Then, unzip the file.
-
-The directory structure will be arranged as:
-
-```
-C2PDN
-   |- net
-      |- models
-         |- C2PDN.py 
-         |- __init__.py 
-      |- metrics.py
-   |- dehaze.py
-```
+# C2PNet
 
 ## Prepare pretrained models
 
@@ -35,13 +19,6 @@ trained_models
 ```
 
 ## Prepare dataset for evaluation
-
-To be fair, we do not provide private links to datasets. 
-
-Please download datasets by yourself.
-
-Here are the official websites of several datasets.
-
 (SOTS)[https://sites.google.com/view/reside-dehaze-datasets/reside-v0]   
 (HN-Haze2)[https://competitions.codalab.org/competitions/28032#learn_the_details]  
 (Dense-Haze)[https://data.vision.ee.ethz.ch/cvl/ntire19/]
