@@ -4,7 +4,7 @@
 
 This is the official PyTorch codes for the paper.  
 >**Curricular Contrastive Regularization for Physics-aware Single Image Dehazing**<br>  [Yu Zheng](https://github.com/YuZheng9), [Jiahui Zhan](https://github.com/zhanjiahui), [Shengfeng He](http://www.shengfenghe.com/), [Junyu Dong](https://it.ouc.edu.cn/djy_23898/main.htm), [Yong Du<sup>*</sup>](https://www.csyongdu.cn/) （ * indicates corresponding author)<br>
->IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR), 2023
+>IEEE/CVF Conference on Computer Vision and Pattern Recognition
 
 ## Getting started
 
