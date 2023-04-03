@@ -86,7 +86,21 @@ python main.py --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --t
 ```
 
 ### Evaluation
-TBD
+<details>
+<summary>SOTS-indoor (click to expand) </summary>
+
+`python dehaze.py -d indoor`
+</details>
+
+<details>
+<summary>SOTS-outdoor (click to expand) </summary>
+
+`python dehaze.py -d outdoor`
+</details>
+
+
+See `python dehaze.py -h ` for list of optional arguments
+
 
 ## Citation
 If you find our work useful for your research, please cite us:
