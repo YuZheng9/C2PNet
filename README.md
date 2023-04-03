@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 You can download the pretrained models and datasets on [GoogleDrive(TBD)]().
 
-The final file path will be arranged as: (Note: please check it carefully), 
+The final file path will be arranged as (please check it carefully)：
 
 ```
 |-trained_models
@@ -63,7 +63,7 @@ The final file path will be arranged as: (Note: please check it carefully),
 ### Prepare dataset for train
 Since our training dataset contains numerous negative samples, which has led to an oversized dataset, we have only uploaded the `ITS` training dataset. However, users can create additional datasets using the `create_lmdb` function, where they can define the number of negative samples and the types of existing dehazers used.
 
-The final file path will be arranged as: (Note: please check it carefully), 
+The final file path will be arranged as (please check it carefully)：
 
 ```
 data
