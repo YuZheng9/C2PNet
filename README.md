@@ -94,7 +94,7 @@ If you find our work useful for your research, please cite us:
 @inproceedings{zheng2023curricular,
   title={Curricular Contrastive Regularization for Physics-aware Single Image Dehazing},
   author={Zheng, Yu and Zhan, Jiahui and He, Shengfeng and Dong, Junyu and Du, Yong},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
   year={2023}
 }
 ```
