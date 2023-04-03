@@ -61,7 +61,7 @@ The final file path will be arranged as: (Note: please check it carefully),
 ```
 
 ### Prepare dataset for train
-Due to the Curriculum Contrstive Learning, our training dataset contains multiple negative samples, resulting in an oversized dataset. Therefore, we only upload the training dataset of `ITS`, and the other datasets can be created by `create_lmdb`(You can also define the number and type of negative samples yourself). 
+Due to the Curricular Contrastive Learning, our training dataset contains multiple negative samples, resulting in an oversized dataset. Therefore, we only upload the training dataset of `ITS`, and the other datasets can be created by `create_lmdb`(You can also define the number and type of negative samples yourself). 
 
 The final file path will be arranged as: (Note: please check it carefully), 
 
