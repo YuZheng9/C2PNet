@@ -63,6 +63,8 @@ The final file path will be arranged as (please check it carefully)：
 ### Prepare dataset for train
 Since our training dataset contains numerous negative samples, which has led to an oversized dataset, we have only uploaded the `ITS` training dataset. However, users can create additional datasets using the `create_lmdb` function, where they can define the number of negative samples and the types of existing dehazers used.
 
+You can refer to our `create_lmdb` and use six images recovered from different networks as six negative samples of different difficulties.
+
 The final file path will be arranged as (please check it carefully)：
 
 ```
