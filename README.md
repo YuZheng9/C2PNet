@@ -29,7 +29,8 @@ pip install -r requirements.txt
 ### Prepare dataset for evaluation
 
 
-You can download the pretrained models and datasets on [GoogleDrive(TBD)]().
+You can download the pretrained models and datasets on [BaiduNetdisk](链接: https://pan.baidu.com/s/1CPpdWz60HsTM2w16mq2S-w?pwd=b76u 提取码: b76u 
+--来自百度网盘超级会员v2的分享)[GoogleDrive(TBD)]().
 
 The final file path will be arranged as (please check it carefully)：
 
