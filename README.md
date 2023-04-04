@@ -74,29 +74,25 @@ data
 
 ### Train
 
-train network on `ITS` 
+Train network on `ITS` dataset
 
 ```
 python main.py --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='its_train' --testset='its_test' --steps=1000000 --eval_step=5000 --clcrloss --clip
 ```
-train network on `OTS` 
+Train network on `OTS`  dataset
 
 ```
 python main.py --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=1500000 --eval_step=5000 --clcrloss --clip
 ```
 
 ### Evaluation
-<details>
-<summary>SOTS-indoor (click to expand) </summary>
+Test C2PNet on `SOTS-indoor` dataset 
 
-`python dehaze.py -d indoor`
-</details>
+```python dehaze.py -d indoor```
 
-<details>
-<summary>SOTS-outdoor (click to expand) </summary>
+Test C2PNet on `SOTS-outdoor` dataset 
 
-`python dehaze.py -d outdoor`
-</details>
+```python dehaze.py -d outdoor```
 
 
 See `python dehaze.py -h ` for list of optional arguments
