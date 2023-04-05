@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ### Prepare dataset for evaluation
 
 
-You can download the pretrained models and datasets on [BaiduNetdisk](https://pan.baidu.com/s/1CPpdWz60HsTM2w16mq2S-w?pwd=b76u).
+You can download the pretrained models and datasets on [BaiduNetdisk](https://pan.baidu.com/s/1e14euxe8JQcyzJ2GyQc-4Q?pwd=rnxk).
 
 The final file path will be arranged as (please check it carefully)：
 
