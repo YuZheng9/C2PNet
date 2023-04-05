@@ -95,7 +95,7 @@ Test C2PNet on `SOTS-outdoor` dataset
 ```python dehaze.py -d outdoor```
 
 
-See `python dehaze.py -h ` for list of optional arguments
+See `python dehaze.py -h ` for the list of optional arguments
 
 
 ## Citation
