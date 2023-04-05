@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ### Prepare dataset for evaluation
 
 
-You can download the pretrained models and datasets on[Google Drive(pretrained models and testset)](https://drive.google.com/drive/folders/1XwKEUCK__JlvoSUrD3ccCbxp7iE27-70?usp=sharing).
+You can download the pretrained models and datasets on [Google Drive(pretrained models and testset)](https://drive.google.com/drive/folders/1XwKEUCK__JlvoSUrD3ccCbxp7iE27-70?usp=sharing).
 
 The final file path will be arranged as (please check it carefully)：
 
@@ -66,7 +66,7 @@ The final file path will be arranged as (please check it carefully)：
 ```
 
 ### Prepare dataset for train
-Since our training dataset contains numerous negative samples, which has led to an oversized dataset, we have only uploaded the `ITS` training dataset [BaiduNetdisk](https://pan.baidu.com/s/1e14euxe8JQcyzJ2GyQc-4Q?pwd=rnxk). However, users can create additional datasets using the `create_lmdb.py`, where they can define the number of negative samples and the types of existing dehazers used.
+Since our training dataset contains numerous negative samples, which has led to an oversized dataset, we have only uploaded the `ITS` training dataset on [BaiduNetdisk](https://pan.baidu.com/s/1e14euxe8JQcyzJ2GyQc-4Q?pwd=rnxk). However, users can create additional datasets using the `create_lmdb.py`, where they can define the number of negative samples and the types of existing dehazers used.
 
 The final file path will be arranged as (please check it carefully)：
 
