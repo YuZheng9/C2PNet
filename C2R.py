@@ -39,10 +39,10 @@ class Vgg19(torch.nn.Module):
         return [h_relu1, h_relu2, h_relu3, h_relu4, h_relu5]
 
 
-class CurriculumContrastLoss(nn.Module):
+class C2R(nn.Module):
     def __init__(self, ablation=False):
 
-        super(CurriculumContrastLoss, self).__init__()
+        super(C2R, self).__init__()
         self.vgg = Vgg19().cuda()
         self.l1 = nn.L1Loss()
         self.weights = [1.0 / 32, 1.0 / 16, 1.0 / 8, 1.0 / 4, 1.0]

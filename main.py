@@ -5,7 +5,7 @@ from tensorboardX import SummaryWriter
 from torch import optim
 from torch.backends import cudnn
 
-from CR import CurriculumContrastLoss
+from C2R import C2R
 from data_utils import *
 from models.C2PNet import *
 from option import model_name, log_dir
@@ -185,5 +185,5 @@ if __name__ == "__main__":
                            eps=1e-08)
     optimizer.zero_grad()
     if opt.clcrloss:
-        criterion.append(CurriculumContrastLoss().to(opt.device))
+        criterion.append(C2R().to(opt.device))
     clcr_train(net, loader_train, loader_test, optimizer, criterion)
