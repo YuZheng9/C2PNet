@@ -29,9 +29,9 @@ parser.add_argument('--name', type=str, default='ITS', help='LMDB name')
 opt = parser.parse_args()
 
 
-class RESIDE_Dataset_cr(data.Dataset):
+class RESIDE_Dataset_C2R(data.Dataset):
     def __init__(self, path, size='whole img', format='.png'):
-        super(RESIDE_Dataset_cr, self).__init__()
+        super(RESIDE_Dataset_C2R, self).__init__()
         self.size = size
         print('crop size', size)
         self.format = format
@@ -71,7 +71,7 @@ class RESIDE_Dataset_cr(data.Dataset):
 
 
 def data2lmdb(dpath, name="train", write_frequency=5, num_workers=8):
-    dataset = RESIDE_Dataset_cr('/mnt/lab/zhengy/zy/haze/RESIDE/ITS', size='whole img')
+    dataset = RESIDE_Dataset_C2R('/mnt/lab/zhengy/zy/haze/RESIDE/ITS', size='whole img')
     data_loader = DataLoader(dataset, num_workers=8, collate_fn=lambda x: x)
     lmdb_path = osp.join(dpath, "%s.lmdb" % name)
     isdir = os.path.isdir(lmdb_path)

@@ -124,8 +124,6 @@ def clcr_train(train_model, train_loader, test_loader, optim, criterion):
             psnrs.append(psnr_eval)
             torch.save({
                 'step': step,
-                'max_psnr': max_psnr,
-                'max_ssim': max_ssim,
                 'ssims': ssims,
                 'psnrs': psnrs,
                 'losses': losses,
