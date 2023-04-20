@@ -93,7 +93,17 @@ Test C2PNet on `SOTS-outdoor` dataset
 See `python dehaze.py -h ` for the list of optional arguments
 
 ### Train
-TBD
+
+Train network on `ITS` dataset
+
+```
+python main.py --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='its_train' --testset='its_test' --steps=1000000 --eval_step=5000 --clcrloss --clip
+```
+Train network on `OTS`  dataset
+
+```
+python main.py --crop --crop_size=240 --blocks=19 --gps=3 --bs=2 --lr=0.0001 --trainset='ots_train' --testset='ots_test' --steps=1500000 --eval_step=5000 --clcrloss --clip
+```
 
 
 ## Citation
