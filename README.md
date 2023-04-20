@@ -9,6 +9,9 @@ This is the official PyTorch codes for the paper:
 ### Network Architecture
 ![Architecture](figs/network.png)
 
+### News
+
+- **Apr 20, 2023:** We release training code.
 
 
 ## Getting started

@@ -41,7 +41,6 @@ model_name = opt.trainset + '_' + opt.net.split('.')[0] + '_' + str(opt.gps) + '
 if opt.clcrloss:
     model_name = model_name + '_clcr'
 
-opt.best_model_dir = opt.model_dir + 'bestpsnr_' + model_name + '.pk'
 opt.latest_model_dir = opt.model_dir + model_name + '_latest.pk'
 
 opt.model_dir = opt.model_dir + model_name + '.pk'
