@@ -36,9 +36,9 @@ def lr_schedule_cosdecay(t, T, init_lr=opt.lr):
 
 
 def curriculum_weight(difficulty):
-    if opt.testset == 'ots_test':
+    if opt.testset == 'OTS_test':
         diff_list = [17.43, 18.12, 30.86, 31.98, 32.98, 33.57]  # OTS
-    elif opt.testset == 'its_test':
+    else:
         diff_list = [17, 19, 31, 32, 36, 40]
     weights = [(1 + cl_lambda) if difficulty > x else (1 - cl_lambda) for x in diff_list]
     weights.append(len(diff_list))
@@ -51,24 +51,21 @@ def clcr_train(train_model, train_loader, test_loader, optim, criterion):
     start_step = 0
     max_ssim = 0
     max_psnr = 0
+    best_psnr = 0
     ssims = []
     psnrs = []
     initial_loss_weight = opt.loss_weight
     if opt.resume and os.path.exists(opt.model_dir):
         print(f'resume from {opt.model_dir}')
         ckp = torch.load(opt.model_dir)
-        train_model.load_state_dict(ckp['model'])
+        print(opt.best_model_dir)
         losses = ckp['losses']
         start_step = ckp['step']
         max_ssim = ckp['max_ssim']
         max_psnr = ckp['max_psnr']
         psnrs = ckp['psnrs']
         ssims = ckp['ssims']
-        with torch.no_grad():
-            max_psnr,max_ssim = test(train_model, test_loader)
-
-        print('psnr is {},ssim is {}'.format(max_psnr,max_ssim))
-        weights = curriculum_weight(max_psnr)
+        weights = curriculum_weight(best_psnr)
         print(f'start_step:{start_step} start training ---')
     else:
         weights = curriculum_weight(0)
@@ -102,6 +99,8 @@ def clcr_train(train_model, train_loader, test_loader, optim, criterion):
             torch.nn.utils.clip_grad_norm_(train_model.parameters(), 0.2)
         optim.step()
         optim.zero_grad()
+        for param in train_model.parameters():
+            param.grad = None
         losses.append(loss.item())
         print(
             f'\rpixel loss : {pixel_loss.item():.5f}| cr loss : {opt.loss_weight * loss2.item():.5f}| step :{step}/{opt.steps}|lr :{lr :.7f} |time_used :{(time.time() - start_time) / 60 :.1f}',
@@ -166,7 +165,7 @@ def test(test_model, loader_test):
         psnr1 = psnr(pred, targets)
         ssims.append(ssim1)
         psnrs.append(psnr1)
-    return np.mean(ssims), np.mean(psnrs)
+        return np.mean(ssims), np.mean(psnrs)
 
 
 if __name__ == "__main__":
