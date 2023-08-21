@@ -7,7 +7,7 @@ This is the official PyTorch codes for the paper:
 >IEEE/CVF Conference on Computer Vision and Pattern Recognition
 
 ### Network Architecture
-![Architecture](figs/network.png)
+![Architecture](figs/framework.png)
 
 ### News
 
